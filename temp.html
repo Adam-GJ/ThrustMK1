@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: monospace;
+        }
+        .slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            box-sizing: border-box;
+            height: 25px;
+            background: #001919;
+            border-radius: 3px;
+            outline: none;
+            opacity: 1;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 3px;
+            background: #00B3B3;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #04AA6D;
+            cursor: pointer;
+        }
+
+        h1, h2, h3 {
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            color: #001919;
+        }
+        button {
+            font-family: inherit;
+            color: #fff;
+            border: 2px solid #005555;
+            transition-duration: .2s;
+            font-size: 25px;
+            padding: 5px 25px;
+            border-radius: 15px;
+            background-color: #245555;
+            cursor:pointer;
+        }
+        button:hover {
+            border: 2px solid #00B3B3;
+            background-color: #63B3B3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Speed Control</h1>
+    <input class="slider" type="range" min="0" max="100" value="0" id="slider" oninput="sendBrightness(this.value)">
+    <h2><b>Target: <span id="val">0</span>%</b></h2>
+    <h1><button>SET</button></h1>
+    <h3>Current: <span id="var">0</span>%</h3>
+
+    <script>
+        function sendBrightness(val) {
+            document.getElementById("val").innerText = val;
+            fetch("/set?value=" + val);
+        }
+    </script>
+</body>
+
+</html>
