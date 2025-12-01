@@ -72,11 +72,7 @@
         function sendBrightness(val) {
             fetch("https://main.guineaman3000.workers.dev/", {
                 method: "POST",
-                body: JSON.stringify({value: val}),
-                Access-Control-Allow-Origin"   : "*",
-                Access-Control-Allow-Methods"  : "POST, OPTIONS",
-                Access-Control-Max-Age"        : "86400",
-        
+                body: JSON.stringify({value: val})
             })
             .then(res => res.text())
             .then(console.log)
@@ -87,4 +83,5 @@
 </body>
 
 </html>
+
 
