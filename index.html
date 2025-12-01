@@ -69,13 +69,14 @@
     <h3>Current: <span id="var">0</span>%</h3>
 
     <script>
-        fetch("https://main.guineaman3000.workers.dev/", {
-            method: "POST",
-            body: JSON.stringify({value: 42}),
-        });
-        console.log("v1.2");
+        function sendBrightness(val) {
+            fetch("https://main.guineaman3000.workers.dev/", {
+                method: "POST",
+                body: JSON.stringify({value: val}),
+            });
+        }
+        console.log("v1.3");
     </script>
 </body>
 
 </html>
-
