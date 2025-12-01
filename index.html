@@ -69,13 +69,14 @@
     <h3>Current: <span id="var">0</span>%</h3>
 
     <script>
-        function sendBrightness(val) {
-            fetch("https://main.guineaman3000.workers.dev/", {
+        async function sendBrightness(val) {
+            const response = await fetch("https://main.guineaman3000.workers.dev/", {
                 method: "POST",
                 body: JSON.stringify({value: val}),
             });
+            console.log(response);
         }
-        console.log("v1.4");
+        console.log("v1.5");
     </script>
 </body>
 
