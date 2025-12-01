@@ -63,9 +63,9 @@
 
 <body>
     <h1>Speed Control</h1>
-    <input class="slider" type="range" min="0" max="100" value="0" id="slider" oninput="sendBrightness(this.value)">
+    <input class="slider" type="range" min="0" max="100" value="0" id="slider">
     <h2><b>Target: <span id="val">0</span>%</b></h2>
-    <h1><button>SET</button></h1>
+    <h1><button onclick="sendBrightness(this.value)">SET</button></h1>
     <h3>Current: <span id="var">0</span>%</h3>
 
     <script>
@@ -75,7 +75,7 @@
                 body: JSON.stringify({value: val}),
             });
         }
-        console.log("v1.3");
+        console.log("v1.4");
     </script>
 </body>
 
